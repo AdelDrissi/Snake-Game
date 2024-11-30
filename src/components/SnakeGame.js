@@ -15,7 +15,7 @@ export const SnakeGame = () => {
     });
 
     return () => clearInterval(gameInterval);
-  }, [snake , direction]);
+  }, [snake, direction]);
 
   const moveSnake = () => {
     const newHead = [
@@ -26,18 +26,41 @@ export const SnakeGame = () => {
 
   // Vérifie si le serpent arrive a manger la nourriture
   if (newHead[0][0] === food[0] && newHead[1] === food[1]) {
-    setScore(score + 1); // Augmente le score de + 1 
-    setFood(generateFood)// Génére une nouvelle nourriture 
-  } 
-  else {
-    snake.pop() // Supprime la queu si il n'y a aucunes nourritures
+    setScore(score + 1); // Augmente le score de + 1
+    setFood(generateFood); // Génére une nouvelle nourriture
+  } else {
+    snake.pop(); // Supprime la queu si il n'y a aucunes nourritures
   }
 
   // Ajoute une nouvelle tête
-  setSnake([newHead,...snake])
+  setSnake([newHead, ...snake]);
 
+  const generateFood = () => {
+    const x = Math.floor(Math.random() * 20);
+    const y = Math.floor(Math.random() * 20);
 
-  
+    return [x, y];
+  };
+
+  //Condition afin de choisir la directopn
+  const handleKeyDown = (event) => {
+    switch (event.key) {
+      case 'ArrowUp':
+        if (direction[1] !== 1) setDirection([0, -1]); // Haut
+        break;
+      case 'ArrowDown':
+        if (direction[1] !== -1) setDirection([0, 1]); // Bas
+        break;
+      case 'ArrowLeft':
+        if (direction[0] !== 1) setDirection([-1, 0]); // Gauche
+        break;
+      case 'ArrowRight':
+        if (direction[0] !== -1) setDirection([1, 0]); // Droite
+        break;
+      default:
+        break;
+    }
+  };
   //JSX
   return (
     <div className="game-container">
