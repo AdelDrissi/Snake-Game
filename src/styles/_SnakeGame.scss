@@ -1,23 +1,26 @@
 .game-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-body {
-  background-color: rgb(135, 132, 132);
+  text-align: center;
 }
 
 .game-board {
-  width: 400px;
-  height: 400px;
-  background-color: #e0e0e0;
   position: relative;
-  border: 2px solid #333;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #000;
+  border: 2px solid #fff;
 }
 
-h1 {
-  font-size: 24px;
-  text-align: center;
-  color: #333;
+.snake-segment {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  background-color: rgb(18, 232, 82);
+}
+
+.food {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  background-color: #f00;
 }
