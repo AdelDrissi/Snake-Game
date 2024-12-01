@@ -5,8 +5,7 @@ import { SnakeGame } from './components/SnakeGame';
 const App = () => {
   return (
     <div className="app-container">
-      <h1>Jeu Snake</h1>
-      <SnakeGame/>
+      <SnakeGame />
     </div>
   );
 };

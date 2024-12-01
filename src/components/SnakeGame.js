@@ -22,19 +22,17 @@ export const SnakeGame = () => {
       snake[(0, 0)] + direction[0],
       snake[(0, 1)] + direction[1],
     ];
+    // Vérifie si le serpent arrive a manger la nourriture
+    if (newHead[0] === food[0] && newHead[1] === food[1]) {
+      setScore(score + 1); // Augmente le score de + 1
+      setFood(generateFood); // Génére une nouvelle nourriture
+    } else {
+      snake.pop(); // Supprime la queu si il n'y a aucunes nourritures
+    }
+
+    // Ajoute une nouvelle tête
+    setSnake([newHead, ...snake]);
   };
-
-  // Vérifie si le serpent arrive a manger la nourriture
-  if (newHead[0][0] === food[0] && newHead[1] === food[1]) {
-    setScore(score + 1); // Augmente le score de + 1
-    setFood(generateFood); // Génére une nouvelle nourriture
-  } else {
-    snake.pop(); // Supprime la queu si il n'y a aucunes nourritures
-  }
-
-  // Ajoute une nouvelle tête
-  setSnake([newHead, ...snake]);
-
   const generateFood = () => {
     const x = Math.floor(Math.random() * 20);
     const y = Math.floor(Math.random() * 20);
@@ -61,6 +59,13 @@ export const SnakeGame = () => {
         break;
     }
   };
+
+  //Ajout d'un écouteur d'évenement pour écouter les touches
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [direction]);
+
   //JSX
   return (
     <div className="game-container">
