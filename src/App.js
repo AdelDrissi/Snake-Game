@@ -1,13 +1,13 @@
 import React from 'react';
-import { SnakeGame } from './components/SnakeGame';
+import {SnakeGame} from './components/SnakeGame';
+import './styles/_SnakeGame.scss';
 
-// Composant principal de l'application
 const App = () => {
   return (
-    <div className="app-container">
+    <div>
       <SnakeGame />
     </div>
   );
 };
 
-export default App; // Exportation du composant pour l'utiliser ailleurs
+export default App;

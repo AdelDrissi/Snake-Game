@@ -7,7 +7,7 @@ const Snake = ({ snake }) => {
 React.useEffect(() => {
   const ctx = canvasRef.current.getContext('2d');
   ctx.clearRect(0, 0, 400, 400); // Efface le canvas
- 
+
   ctx.fillStyle = 'green'; // Couleur du serpent
   snake.forEach((segment) => {
     ctx.fillRect(segment.x * 20, segment.y * 20, 20, 20); // Dessine chaque segment

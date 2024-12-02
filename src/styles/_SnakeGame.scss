@@ -4,23 +4,24 @@
 
 .game-board {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
+  background-color: #000000;
   margin: 0 auto;
-  background-color: #000;
-  border: 2px solid #fff;
+  border: 2px solid #555;
 }
 
 .snake-segment {
   position: absolute;
-  width: 5%;
-  height: 5%;
-  background-color: rgb(18, 232, 82);
+  width: 20px;
+  height: 20px;
+  background-color: rgb(6, 233, 6);
 }
 
 .food {
   position: absolute;
-  width: 5%;
-  height: 5%;
-  background-color: #f00;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(225, 6, 6);
+  border-radius: 50%;
 }
