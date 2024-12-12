@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+h1 {
+  border-radius: 20px;
+  background: linear-gradient(#e66465, #9198e5);
+  margin: 50px 100px 0 100px;
+}
+
 .game-board {
   position: relative;
   width: 400px;
@@ -20,6 +26,16 @@
   background-color: #0f0; /* La couleur du serpent */
   border-radius: 10px; /* Légèrement arrondi, mais pas totalement circulaire */
   box-shadow: 0 0 8px rgba(0, 255, 0, 0.5); /* Optionnel : pour un léger effet de lueur */
+}
+
+button {
+  cursor: pointer;
+  border-radius: 5px;
+ font-size: 20px;
+  &:hover {
+    background-color: rgb(94, 120, 234);
+    transition-duration: 1s;
+  }
 }
 
 .food {
