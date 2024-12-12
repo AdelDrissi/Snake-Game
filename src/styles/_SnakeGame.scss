@@ -6,16 +6,20 @@
   position: relative;
   width: 400px;
   height: 400px;
-  background-color: #000000;
+  background: radial-gradient(circle, #444, #000);
   margin: 0 auto;
-  border: 2px solid #555;
+  border: 2px solid #888;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .snake-segment {
   position: absolute;
-  width: 20px;
+  width: 20px; /* Taille du segment */
   height: 20px;
-  background-color: rgb(6, 233, 6);
+  background-color: #0f0; /* La couleur du serpent */
+  border-radius: 10px; /* Légèrement arrondi, mais pas totalement circulaire */
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.5); /* Optionnel : pour un léger effet de lueur */
 }
 
 .food {
